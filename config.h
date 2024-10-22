@@ -17,32 +17,31 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-#define PERMISSIVE_HOLD
+// Tapping config.
+
 #define TAPPING_TERM_PER_KEY
-
-// Tapping terms.
-
+#define PERMISSIVE_HOLD
+#define PERMISSIVE_HOLD_PER_KEY
 #define TAPPING_TERM 190
-#define TAPPING_TERM_MODS 700
-#define TAPPING_TERM_TD 160
+#define TAPPING_TERM_LAYER 190
 
-// Capsword.
+// Double tap shift for caps word.
 
 #define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
-#define CAPS_WORD_IDLE_TIMEOUT 2000
+#define CAPS_WORD_IDLE_TIMEOUT 10000
 
-// Enable kinetic mouse for nice scroll wheel emulation.
+// Combo timings.
 
-#define MK_KINETIC_SPEED
-#define MOUSEKEY_INTERVAL 16
-#define MOUSEKEY_TIME_TO_MAX 40
-#define MOUSEKEY_DELAY 100
+#define COMBO_TERM 25
+
+// Enable better behaved scroll wheel emulation.
+
 #define MOUSEKEY_WHEEL_DELAY 100
+#define MOUSEKEY_WHEEL_INTERVAL 70
+#define MOUSEKEY_WHEEL_TIME_TO_MAX 80
 
-#define MOUSEKEY_WHEEL_INTERVAL 50 // The default is 100
-#define MOUSEKEY_WHEEL_TIME_TO_MAX 100 // The default is 40
+// Layout macros that allow preprocessor substitutions. Use these instead of the
+// standard LAYOUT_ macros in keymap.c code.
 
-#define MOUSEKEY_WHEEL_INITIAL_MOVEMENTS 12
-#define MOUSEKEY_WHEEL_BASE_MOVEMENTS 32
-#define MOUSEKEY_WHEEL_ACCELERATED_MOVEMENTS 32
-#define MOUSEKEY_WHEEL_DECELERATED_MOVEMENTS 12
+#define HBM_LAYOUT_ferris_sweep(...) LAYOUT_split_3x5_2(__VA_ARGS__)
+#define HBM_LAYOUT_planck(...) LAYOUT_planck_grid(__VA_ARGS__)
